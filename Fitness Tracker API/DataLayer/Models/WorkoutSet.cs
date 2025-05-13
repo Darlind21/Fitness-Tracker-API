@@ -16,9 +16,9 @@ namespace Fitness_Tracker_API.DataLayer.Models
         //RIR (Reps in Reserve is a common type of measurement in strength training
         //The number means how many more reps you can do until failure for an excercise
 
-        public Excercise Excercise { get; set; }
+        public required WorkoutExcercise WorkoutExcercise { get; set; }
 
-        [ForeignKey(nameof(Excercise))]
-        public int ExcerciseId { get; set; }
+        [ForeignKey(nameof(WorkoutExcercise))]
+        public int WorkoutExcerciseId { get; set; }
     }
 }

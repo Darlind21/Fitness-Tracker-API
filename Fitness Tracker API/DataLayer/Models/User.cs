@@ -10,22 +10,21 @@ namespace Fitness_Tracker_API.DataLayer.Models
         [MaxLength(30)]
         [MinLength(3)]
         [Required]
-        public string FirstName { get; set; }
+        public required string FirstName { get; set; }
 
         [MaxLength(30)]
         [Required]
-        public string LastName { get; set; }
+        public required string LastName { get; set; }
 
         [MaxLength(10)]
-        public string Gender { get; set; }
+        public string? Gender { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public DateOnly DateOfBirth { get; set; }
 
 
-        //Navigation properties
+        //Nav properties
         public ICollection<Workout>? Workouts { get; set; }
         public ICollection<DailyNutritionLog>? DailyNutritionLogs { get; set; } 
-        public ICollection<FitnessGoal>? FitnessGoals { get; set; }
         public ICollection<BodyMeasurement>? BodyMeasurements { get; set; }
     }
 }
